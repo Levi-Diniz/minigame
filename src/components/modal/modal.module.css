@@ -1,0 +1,66 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* height: 100vh; */
+}
+
+.teste {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+    
+}
+.teste button {
+    width: 20px;
+    height: 20px;
+    margin: 7px;
+    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.507);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.4s;
+
+}
+
+.teste button:hover {
+    background-color: yellow;
+    transform: scale(1.1);
+
+}
+
+.teste2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.modalMain {
+    width: 350px;
+    height: 150px;
+    background: white;
+    border-radius: 12px;
+    /* padding: 10px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+.displayNone {
+    display: none;
+}
