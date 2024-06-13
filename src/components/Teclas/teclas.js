@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import style from "./jogo.module.css";
-import Modal from "../modal/modal";
+import style from "./teclas.module.css";
+import Modal from "../Modal/modal";
 
 export default function Jogo() {
     const [progress, setProgress] = useState(0);
@@ -8,20 +8,15 @@ export default function Jogo() {
     const [sequence, setSequence] = useState([]);
     const [currentPosition, setCurrentPosition] = useState(0);
     const [timeUp, setTimeUp] = useState(false);
-
-
-
     const [show, setShow] = useState(false);
 
     const showModal = () => {
-      setShow(true);
+        setShow(true);
     };
-  
-    const hideModal = () => {
-      setShow(false);
-    };
-  
 
+    const hideModal = () => {
+        setShow(false);
+    };
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -30,7 +25,7 @@ export default function Jogo() {
             } else {
                 setTimeUp(true);
                 clearTimeout(timer);
-                showModal()
+                showModal();
             }
         }, 50);
 
@@ -81,12 +76,18 @@ export default function Jogo() {
         };
     }, [activeKeys, currentPosition, timeUp]);
 
+    useEffect(() => {
+        if (currentPosition === activeKeys.length && !timeUp) {
+            generateRandomKeys();
+        }
+    }, [currentPosition, activeKeys.length, timeUp]);
+
     return (
         <main id={style.container}>
             <div className={style.game}>
                 <div className={style.containerRaio}>
                     <img className={style.imgRaio} src="imgs/raio1.png" alt="raio" />
-                    <img className={style.imgCoroa} src="imgs/coroa.png" alt="raio" />
+                    <img className={style.imgCoroa} src="imgs/coroa.png" alt="coroa" />
                     <img className={style.imgRaio} src="imgs/raio2.png" alt="raio" />
                 </div>
                 <p className={style.gameName}>Mini-Game</p>
@@ -109,7 +110,7 @@ export default function Jogo() {
                     </div>
                 </div>
 
-                <Modal show={show} handleClose={hideModal}>
+                <Modal show={show} handleClose={hideModal} title={"Você perdeu!"}>
                     <p>Este é o conteúdo do modal!</p>
                 </Modal>
             </div>
