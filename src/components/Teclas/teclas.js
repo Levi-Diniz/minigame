@@ -189,7 +189,7 @@ export default function Jogo() {
                             <p>High Score: {highScore}</p>
                         </div>
                         <div className={style.buttonModal}>
-                            <Link to={"/minigamee"}>
+                            <Link to={"/"}>
                                 <button onClick={hideModal}>Sair</button>
                             </Link>
                             <button onClick={restartGame}>Reiniciar</button>
