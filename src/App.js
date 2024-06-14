@@ -6,8 +6,8 @@ import Teclas from './components/Teclas/teclas';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Menu />} />
-      <Route path="/teclas" element={<Teclas />} />
+      <Route path="/minigame" element={<Menu />} />
+      <Route path="/minigame/teclas" element={<Teclas />} />
     </Routes>
   );
 }

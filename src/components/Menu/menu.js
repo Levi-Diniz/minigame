@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
 
 const jogosData = [
-    { id: 1, route: '/teclas', src: 'imgs/Mini_Game.png', alt: 'minigame 1' },
-    { id: 2, route: '/', src: 'imgs/beta.jpeg', alt: 'minigame 2' },
+    { id: 1, route: '/minigame/teclas', src: 'imgs/Mini_Game.png', alt: 'minigame 1' },
+    { id: 2, route: '/minigame', src: 'imgs/beta.jpeg', alt: 'minigame 2' },
 ];
 
 export default function Menu() {
@@ -107,7 +107,7 @@ export default function Menu() {
                 <div className={styles.container2}>
                     <div className={styles.jogos}>
                         {jogosData.map((jogo) =>
-                            jogo.route === '/' ? (
+                            jogo.route === '/minigame' ? (
                                 <img onClick={showModal} key={jogo.id} src={jogo.src} alt={jogo.alt} />
                             ) : (
                                 <Link key={jogo.id} to={jogo.route}>
