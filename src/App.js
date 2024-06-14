@@ -5,10 +5,10 @@ import Teclas from './components/Teclas/teclas';
 
 function App() {
   return (
-    <Router basename="/seu-repositorio">
+    <Router basename="/minigame">
       <Routes>
-        <Route path="/minigame" element={<Menu />} />
-        <Route path="/minigame/teclas" element={<Teclas />} />
+        <Route path="/" element={<Menu />} />
+        <Route path="/teclas" element={<Teclas />} />
       </Routes>
     </Router>
   );
