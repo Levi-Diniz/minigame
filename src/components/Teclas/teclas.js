@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import style from "./teclas.module.css";
 import Modal from "../Modal/modal";
 import { Link } from "react-router-dom";
@@ -14,12 +14,10 @@ export default function Jogo() {
     const [gameOver, setGameOver] = useState(false);
     const [level, setLevel] = useState(1);
     const [points, setPoints] = useState(() => {
-        // Carrega os pontos do local storage na inicialização
         const savedPoints = localStorage.getItem("points");
         return savedPoints ? parseInt(savedPoints, 10) : 0;
     });
     const [highScore, setHighScore] = useState(() => {
-        // Carrega o high score do local storage na inicialização
         const savedHighScore = localStorage.getItem("highScore");
         return savedHighScore ? parseInt(savedHighScore, 10) : 0;
     });
@@ -74,7 +72,7 @@ export default function Jogo() {
         return () => clearTimeout(timer);
     }, [progress, gameOver]);
 
-    const generateRandomKeys = (isReset = false) => {
+    const generateRandomKeys = useCallback((isReset = false) => {
         const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const numbers = "123456789";
         const allChars = letters + numbers;
@@ -107,11 +105,11 @@ export default function Jogo() {
                 localStorage.setItem("highScore", level); // Salva o high score atualizado
             }
         }
-    };
+    }, [highScore, level]);
 
     useEffect(() => {
         generateRandomKeys(true); // Inicializa sem incrementar o nível
-    }, []);
+    }, [generateRandomKeys]);
 
     useEffect(() => {
         const handleKeyPress = (event) => {
@@ -141,7 +139,7 @@ export default function Jogo() {
         return () => {
             window.removeEventListener("keydown", handleKeyPress);
         };
-    }, [activeKeys, currentPosition, timeUp, gameOver]);
+    }, [activeKeys, currentPosition, timeUp, gameOver, generateRandomKeys]);
 
     useEffect(() => {
         const errorAudio = new Audio(errorSound);
@@ -207,6 +205,3 @@ export default function Jogo() {
         </main>
     );
 }
-
-
-               
