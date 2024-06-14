@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Modal from '../Modal/modal';
 
 const jogosData = [
-    { id: 1, route: '/teclas', src: 'imgs/Mini_Game.png', alt: 'minigame 1' },
+    { id: 1, route: '/minigame/teclas', src: 'imgs/Mini_Game.png', alt: 'minigame 1' },
     { id: 2, route: '/', src: 'imgs/beta.jpeg', alt: 'minigame 2' },
 ];
 
