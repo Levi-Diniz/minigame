@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Menu from './components/Menu/menu';
-import Teclas from './components/Teclas/teclas';
+import Menu from './components/Menu/Menu';
+import Teclas from './components/Teclas/Teclas';
 
 function App() {
   return (

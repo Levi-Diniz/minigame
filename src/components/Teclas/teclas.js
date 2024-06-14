@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import style from "./teclas.module.css";
-import Modal from "../Modal/modal";
+import Modal from "../Modal/Modal";
 import { Link } from "react-router-dom";
 import errorSound from "./1.mp3"; // Importe o arquivo de áudio de erro
 

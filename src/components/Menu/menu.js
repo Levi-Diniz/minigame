@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './menu.module.css';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal/modal';
+import Modal from '../Modal/Modal';
 
 const jogosData = [
     { id: 1, route: '/teclas', src: 'imgs/Mini_Game.png', alt: 'minigame 1' },
