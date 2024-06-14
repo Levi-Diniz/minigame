@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/minigame/static/css/main.8d168513.css",
+    "main.js": "/minigame/static/js/main.f579d40f.js",
+    "static/media/1.mp3": "/minigame/static/media/1.e3abea6edb10fff06d28.mp3",
+    "static/media/peak_background.svg": "/minigame/static/media/peak_background.9ec7883640ad05e00c1b.svg",
+    "index.html": "/minigame/index.html",
+    "main.8d168513.css.map": "/minigame/static/css/main.8d168513.css.map",
+    "main.f579d40f.js.map": "/minigame/static/js/main.f579d40f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d168513.css",
+    "static/js/main.f579d40f.js"
+  ]
+}
